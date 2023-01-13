@@ -1,0 +1,35 @@
+html 
+    header 
+        title Add Artwork  
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+        h1.center Add Artwork to the Open Gallery
+        form#addart(action='/gallery' method='post')
+            p
+                label(for='name') Name: 
+                input#name(type='text' name='name')
+            p
+                label(for='artist') Artist: 
+                input#artist(type='text' name='artist')
+            p
+                label(for='year') Year: 
+                input#year(type='text' name='year')
+            p
+                label(for='medium') Medium: 
+                input#medium(type='text' name='medium')
+            p
+                label(for='category') Category: 
+                input#category(type='text' name='category')
+            p
+                label(for='description') Description: 
+                input#description(type='text' name='description')
+            p
+                label(for='image') Image: 
+                input#image(type='text' name='image')
+            p
+                button#addartwork(type='submit' onclick="submitForm()") Add Artwork
+            p
+                a(href='/gallery') Return to Gallery
+            p
+                a(href='/account') Return to Account

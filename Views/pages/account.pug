@@ -1,0 +1,15 @@
+html 
+    header 
+        title Account Info 
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+        p.center Welcome #{session.username}! This is your account information
+        p.center Account Type is #{session.type}
+
+        p.center Would you like to change your account type?
+        button#account(value=session.username onclick="changeAccount(this.value)")
+            if session.type == 'artist'
+                | Change to Patron Account
+            else
+                | Change to Artist Account 

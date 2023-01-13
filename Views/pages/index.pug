@@ -1,0 +1,33 @@
+html
+    head 
+        title Gallery of Art Home
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+
+        // logic to display gallery home page if logged in, else display register/login info
+        if session && session.loggedin
+            div#gallery
+                h1.center Welcome to the Open Gallery 
+                h3.center Here are some of the artworks in our gallery
+                p.center You can find more information about each artwork by clicking on the image
+                p.center You can also view the entire gallery using the Artworks link 
+                each artwork in gallery
+                    div.gallery
+                        div.artwork
+                            a(href="/gallery/" + artwork._id)
+                                img(src=artwork.image)
+                        div.artwork-info
+                            h2= artwork.name
+                            h3 
+                                a(href="/artists/" + artwork.artist) #{artwork.artist}
+                            h4= artwork.year
+        else
+            h1.center Welcome to the Gallery of Art Home Page 
+            h2.center Please register or login to view our open gallery
+            include ../partials/signin
+            
+
+
+
+        

@@ -1,0 +1,20 @@
+html 
+    title Gallery of Art by artist
+    link(rel='stylesheet', href='/css/styles.css')
+body
+    include ../partials/headers
+    h1.center Here is the Artwork by #{artist} in our Open Gallery
+    br
+    each artwork in gallery
+        div.gallery
+            div.artwork
+                a(href="/gallery/" + artwork._id)
+                    img(src=artwork.image)
+            div.artwork-info
+                h2= artwork.name
+                h3 
+                    a(href="/artists/" + artwork.artist) #{artwork.artist}
+                h4= artwork.year
+                h4= artwork.medium
+                h4= artwork.category
+                h4= artwork.description

@@ -1,0 +1,16 @@
+.login 
+    h2 Sign-In
+    div 
+        | Username: 
+        input#name(type="textbox")
+    div
+        | Password: 
+        input#pass(type="password")
+    div
+        button#submit(type="button") Login
+        br
+        | If you do not have an account, register 
+        a(href="/register") here
+    div#error(style="color:red")
+
+    script(src="./js/login.js")

@@ -1,0 +1,19 @@
+html 
+    header 
+        title Artists 
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+        h1.center Here are all the Artists in our Open Gallery
+        p.center Use the arrows to navigate through the artist pages 
+        - page = parseInt(page) || 1
+        if page > 1
+            a(href="/artists?page=" + (page - 1)) Previous Page
+        a(href="/artists?page=" + (page + 1)) Next Page
+        br
+        
+        each artist in artists
+            p
+                a(href="/artists/" + artist.artist) #{artist.artist}
+
+

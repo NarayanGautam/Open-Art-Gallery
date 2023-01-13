@@ -1,0 +1,23 @@
+html 
+    head 
+        title Register User 
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        a(href="/") Home
+        a(href="/login") Login 
+
+        
+        .register 
+            h2 Register New Patron 
+            div
+                | Username: 
+                input#name(type="textbox")
+            div
+                | Password: 
+                input#pass(type="password")
+            div
+                button#submit(type="button") Register
+            div#error(style="color:red")
+
+        
+        script(src="./js/register.js")

@@ -1,0 +1,32 @@
+html
+    head 
+        title Gallery of Art
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+
+        h1.center Here is all the Artwork in our Open Gallery
+        p.center Use the arrows to navigate through the gallery pages
+        - page = parseInt(page) || 1
+        if page > 1
+            a(href="/gallery?page=" + (page - 1)) Previous Page
+        a(href="/gallery?page=" + (page + 1)) Next Page
+        br
+        each artwork in gallery
+            div.gallery
+                div.artwork
+                    a(href="/gallery/" + artwork._id)
+                        img(src=artwork.image)
+                div.artwork-info
+                    h2= artwork.name
+                    h3 
+                        a(href="/artists/" + artwork.artist) #{artwork.artist}
+                    h4= artwork.year
+                    h4= artwork.medium
+                    h4= artwork.category
+                    h4= artwork.description
+            
+
+
+
+        

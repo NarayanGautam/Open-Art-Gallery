@@ -1,0 +1,23 @@
+div#header
+    a(href="/") Home
+    |  
+    if session && session.loggedin
+         
+        a(href="/account") Account Information
+         
+        a(href="/artists/following") Following 
+         
+        a(href="/artists") Artists
+         
+        a(href="/gallery") Artworks 
+        
+        if session.type == 'artist'
+             
+            a(href="/addartwork") Add Artwork
+             
+            a(href="/artists/followers") Add Workshop
+        
+        a(href="/logout") Logout
+    else
+        a(href="/register") Register
+script(src = "/js/client.js", defer)
