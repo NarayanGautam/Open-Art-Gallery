@@ -4,7 +4,6 @@
     COMP 2406
     December 9, 2022
     server.js - server side code for project
-    Base code from Tutorial 9 demonstration code provided on Brightspace
 */
 
 // import express module, and express session module
@@ -23,7 +22,7 @@ const app = express();
 
 // store connection and sessions in mongodb store
 let store = new MongoDBStore({
-    uri: 'mongodb://127.0.0.1:27017/termproject',
+    uri: 'mongodb://127.0.0.1:27017/artgallery',
     collection: 'sessions'
 });
 

@@ -20,7 +20,7 @@ const users = [
 // async function to connect and load data into database
 const loadData = async () => {
 	// connect to mongodb, using localhoset (127.0.0.1)
-	await mongoose.connect('mongodb://127.0.0.1:27017/gallery', { useNewUrlParser: true, useUnifiedTopology: true });
+	await mongoose.connect('mongodb://127.0.0.1:27017/artgallery', { useNewUrlParser: true, useUnifiedTopology: true });
 	// drop existing database
 	await mongoose.connection.dropDatabase();
 	
